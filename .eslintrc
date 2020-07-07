@@ -1,0 +1,43 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:react/recommended", // recommended react rules
+    "plugin:prettier/recommended" // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+  ],
+  "globals": {
+    "window": true,
+    "document": true,
+    "localStorage": true,
+    "Promise": true,
+    "navigator": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "jest", "react-hooks"],
+  "env": {
+    "jest": true,
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "rules": {
+    "react/no-unused-prop-types": 1,
+    "react/no-deprecated": 1,
+    "react/prop-types": 0,
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+  }
+}
